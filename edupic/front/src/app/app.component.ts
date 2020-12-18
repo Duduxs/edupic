@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { PhotoModel } from './shared/model/photo-model';
+import { PhotoService } from './shared/service/photo.service';
 
 @Component({
   selector: 'app-root',
@@ -7,14 +9,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  photos = [
-    {
-      url: "https://www.nutripetshop.com.br/wp-content/uploads/2016/05/12321443_473034946238786_4080012528664932810_n.jpg",
-      alt: "Rabbit"
-    },
-    {
-      url:"https://www.infoescola.com/wp-content/uploads/2008/07/coelho.jpg" ,
-      alt:"Coelho pequeno"
-    }
-  ]
+  photos: PhotoModel[];
+
+  constructor(private photoService: PhotoService){}
+
+  ngOnInit(){
+    this.photoService.getPhotosByUser('flavio').forEach(r => this.photos = r)
+  }
+
 }
