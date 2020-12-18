@@ -9,12 +9,10 @@ import { PhotoService } from './shared/service/photo.service';
 })
 export class AppComponent {
 
-  photos: PhotoModel[];
 
-  constructor(private photoService: PhotoService){}
+  constructor(){}
 
   ngOnInit(){
-    this.photoService.getPhotosByUser('flavio').forEach(r => this.photos = r)
   }
 
 }
