@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { PhotoModel } from 'src/app/shared/model/photo-model';
 import { PhotoService } from 'src/app/shared/service/photo.service';
 
@@ -11,10 +12,10 @@ export class PhotoListComponent implements OnInit {
 
   photos: PhotoModel[];
 
-  constructor(private photoService: PhotoService) { }
+  constructor(private photoService: PhotoService, private routeActivated: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.photoService.getPhotosByUser('flavio').forEach(r => this.photos = r)
+    this.photoService.getPhotosByUser(this.routeActivated.snapshot.params.userName).forEach(r => this.photos = r)
   }
 
 }

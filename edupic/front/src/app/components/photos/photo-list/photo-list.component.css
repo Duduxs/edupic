@@ -1,6 +1,7 @@
 div {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
-  }
-  
+  display: flex;
+  flex-flow: row wrap;
+  gap: 5px;
+  justify-content: space-around;
+  background-color: silver;
+}

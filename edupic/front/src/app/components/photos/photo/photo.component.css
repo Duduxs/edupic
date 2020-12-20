@@ -2,4 +2,6 @@ img{
     border-radius: 5px;
     border-style: solid;
     border-color: rgb(241, 235, 235);
+    height: 70vh;
+    object-fit: cover;
 }

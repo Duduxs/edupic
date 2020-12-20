@@ -1,4 +1,8 @@
 <div>
-    <app-photo *ngFor="let photo of photos" [url]="photo.url" [alt]="photo.alt"></app-photo>
+    <app-photo
+      class="photo-item"
+      *ngFor="let photo of photos"
+      [url]="photo.url"
+      [alt]="photo.alt"
+    ></app-photo>
 </div>
-  
